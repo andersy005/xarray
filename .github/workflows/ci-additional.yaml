@@ -24,9 +24,7 @@ jobs:
     name: detect ci trigger
     needs: pre-job
     runs-on: ubuntu-latest
-    if: |
-      (github.event_name == 'push' || github.event_name == 'pull_request')
-      && ${{ needs.pre-job.outputs.should_skip != 'true' }}
+    if: ${{ needs.pre-job.outputs.should_skip != 'true' }}
     outputs:
       triggered: ${{ steps.detect-trigger.outputs.trigger-found }}
     steps:
