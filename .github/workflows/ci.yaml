@@ -19,7 +19,7 @@ jobs:
         with:
           concurrent_skipping: "always"
           skip_after_successful_duplicate: "false"
-          do_not_skip: '["pull_request", "workflow_dispatch"]'
+          do_not_skip: '["schedule", "workflow_dispatch"]'
           cancel_others: true
           paths_ignore: '["**/doc/**"]'
   detect-ci-trigger:
